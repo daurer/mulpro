@@ -40,7 +40,7 @@ def log(logger, message, lvl, exception=None, rollback=1):
                                                               code.co_name, 
                                                               code.co_filename, 
                                                               code.co_firstlineno)
-    logcall("%s:\t%s" % (lvl,msg))
+    logcall(msg)
     if exception is not None:
         raise exception(message)
         
