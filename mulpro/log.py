@@ -15,6 +15,8 @@ log_warning = lambda logger, message: log(logger, message, lvl="WARNING", except
 log_info = lambda logger, message: log(logger, message, lvl="INFO", exception=None, rollback=2)
 log_debug = lambda logger, message: log(logger, message, lvl="DEBUG", exception=None, rollback=2)
 
+WARNING_AFTER_JOB_DURATION_SEC = 30
+
 def log(logger, message, lvl, exception=None, rollback=1):
     logcalls = {"ERROR": logger.error,
                 "WARNING": logger.warning,

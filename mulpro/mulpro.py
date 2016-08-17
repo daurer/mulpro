@@ -15,8 +15,6 @@ logger = logging.getLogger(__name__)
 import log
 from log import log_debug, log_info, log_warning, log_and_raise_error
 
-WARNING_AFTER_JOB_DURATION_SEC = 30
-
 import traceback, sys
 
 def _worker_call(worker,pipe):
@@ -105,7 +103,7 @@ def mulpro(Nprocesses, worker, getwork, logres=None):
                     else:
                         continue
                 else:
-                    if job_duration > WARNING_AFTER_JOB_DURATION_SEC:
+                    if job_duration > log.WARNING_AFTER_JOB_DURATION_SEC:
                         log_warning(logger, "Process %i has not returned from work call for %s sec" % (i,job_duration))
                         #if job_duration > 100:
                         #    log_warning(logger, "Process %i has not returned from work call for more than 1000 sec. Abort." % (i))
