@@ -93,7 +93,7 @@ def mulpro(Nprocesses, worker, getwork, logres=None):
                     if logres != None:
                         logres(result)
                     t_log = time.time() - t_log
-                    log_info(logger, "Datarate %.1f Hz; job %i; process %i/%i; work %.2f sec / logging %.2f sec" % (N_done/(time.time()-t_start),N_done,i,Nprocesses,result["_time"],t_log))
+                    log_info(logger, "Datarate %.1f Hz; job %i; process %i/%i; work %.2f sec / logging %.2f sec" % (N_done/(time.time()-t_start),N_done,i+1,Nprocesses,result["_time"],t_log))
                     if not end:
                         work_package = getwork()
                         if work_package is None:
